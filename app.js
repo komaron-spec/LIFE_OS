@@ -6,7 +6,7 @@ const dateKey = () => new Date().toLocaleDateString("en-CA");
 const save = () => localStorage.setItem(KEY, JSON.stringify(state));
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" })[c]);
 
-function phase(hour) { return hour < 5 ? "NIGHT" : hour < 11 ? "MORNING" : hour < 17 ? "AFTERNOON" : hour < 21 ? "EVENING" : "NIGHT"; }
+function phase(hour) { return hour < 5 ? "NIGHT🛌" : hour < 11 ? "MORNING☀️" : hour < 17 ? "AFTERNOON🌇" : hour < 21 ? "EVENING🌙" : "NIGHT🛌"; }
 function season(month) { return month >= 5 && month <= 7 ? "SUMMER" : month >= 8 && month <= 10 ? "AUTUMN" : month <= 1 || month === 11 ? "WINTER" : "SPRING"; }
 function boot() {
   app.innerHTML = `<section class="boot"><div><div class="orb"><span>SYNC</span></div><h1>LIFE SYSTEM</h1><p class="sub">real world interface</p><div class="progress"><i></i></div><p id="boot-copy">Preparing world interface…</p></div></section>`;
